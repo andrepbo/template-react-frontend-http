@@ -13,12 +13,12 @@ export default function ClientsList() {
   React.useEffect(() => {
     getClients().then(
       (result) => {
-        setIsLoaded(true);
         setClients(result);
+        setIsLoaded(true);
       },
       (error) => {
-        setIsLoaded(true);
         setError(error);
+        setIsLoaded(true);
         console.log(
           "There has been a problem with the fetch operation: " + error.message
         );
