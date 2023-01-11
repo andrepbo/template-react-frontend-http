@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3333/clients";
+const baseUrl = "http://localhost:3333";
 // const token = localStorage.getItem("token");
 // let  httpHeaders = { "Content-type": "application/json", 'Accept-Charset' : 'utf-8', Authorization: `Bearer ${token}`}
 // let headers = new Headers(httpHeaders);
@@ -32,7 +32,7 @@ export function postAddClient(clientInfo) {
       // Authorization: `Bearer ${token}`,
     }),
   };
-  return fetch(`${baseUrl}/item`, postInfo)
+  return fetch(`${baseUrl}/client/id`, postInfo)
     .then((res) => {
       return res;
     })
@@ -41,7 +41,7 @@ export function postAddClient(clientInfo) {
 
 // GET request to list clients
 export function getClients() {
-  let request = new Request(baseUrl, initGET);
+  let request = new Request(`${baseUrl}/clients`, initGET);
   return fetch(request).then((res) => {
     return res.ok ? res.json() : console.log("Network response was not ok.");
   });
@@ -49,7 +49,7 @@ export function getClients() {
 
 // GET request to list a client
 export function getClient(id) {
-  let request = new Request(`${baseUrl}/${id}`, initGET);
+  let request = new Request(`${baseUrl}/client/${id}`, initGET);
   return fetch(request).then((res) => {
     return res.ok ? res.json() : console.log("Network response was not ok.");
   });

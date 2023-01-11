@@ -8,7 +8,7 @@ export default function AppRoutes() {
   return (
     <BrowserRouter>
       <Route exact path="/" component={ClientsList} />
-      <Route path="/clients/:id" component={ClientsDetails} />
+      <Route path="/client/:id" component={ClientsDetails} />
     </BrowserRouter>
   );
 }

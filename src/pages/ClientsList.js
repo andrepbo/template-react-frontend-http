@@ -35,7 +35,7 @@ export default function ClientsList() {
       <ul>
         {clients.map((client) => (
           <li key={client.id}>
-            <Link to={`/clients/${client.id}`}>{client.name}</Link>
+            <Link to={`/client/${client.id}`}>{client.name}</Link>
           </li>
         ))}
       </ul>
